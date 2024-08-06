@@ -7,6 +7,7 @@
     <style>
         * {
             box-sizing: border-box;
+            font-family: "Arial";
         }
         body {
             margin: 0;
@@ -18,10 +19,52 @@
         canvas {
             border: 10px solid black;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .box {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            border: 10px solid black;
+            border-top: 0;
+            background-color: white;
+            color: black;
+        }
+        .scoreConteiner {
+            display: flex;
+            width: 100%;
+        }
+        #score1{
+            width: 100%;
+            border-right: 2.5px solid black;
+            color: red;
+        }
+        #score2{
+            width: 100%;
+            border-left: 2.5 solid black;
+            color: blue;
+        }
     </style>
 </head>
 <body>
-    <canvas id="board"></canvas>
+    <div class="container">
+        <canvas id="board"></canvas>
+        <div class="scoreConteiner">
+            <div class="box" id="score1">0</div>
+            <div class="box" id="score2">0</div>
+        </div>
+        <select class="box" name="size" id="selection" onchange="init()" value="3">
+            <option value="2">2</option>
+            <option selected value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>
